@@ -1,7 +1,10 @@
 var app = angular.module('app', ['ngRoute']);
 
-app.controller('myController', function($scope){
-
+app.controller('myController', function($scope, $http){
+  $http.get('https://api.github.com/zen').then(function(response){
+    $scope.zenData = response.data;
+    console.log(response.data);
+  });
 });
 
 

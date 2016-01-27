@@ -13,7 +13,7 @@ app.config(function($routeProvider){
   })
     .when('/dogs', {
       templateUrl: 'partials/dogs.html',
-      controller: 'DdogsController'
+      controller: 'DogsController'
     })
 });
 

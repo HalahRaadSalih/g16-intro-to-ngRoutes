@@ -25,6 +25,8 @@ app.config(function($routeProvider, $locationProvider){
     .otherwise({
       redirect: '/'
     });
+
+    $locationProvider.html5Mode(true);
 });
 
 

@@ -8,7 +8,7 @@ app.controller('myController', function($scope, $http){
 });
 
 
-app.config(function($routeProvider){
+app.config(function($routeProvider, $locationProvider){
   $routeProvider
   .when('/',{
     templateUrl: 'partials/home.html',
@@ -18,6 +18,13 @@ app.config(function($routeProvider){
       templateUrl: 'partials/dogs.html',
       controller: 'DogsController'
     })
+    .when('/number/:first', {
+      templateUrl: 'partials/numbers.html',
+      controller: 'NumbersController'
+    })
+    .otherwise({
+      redirect: '/'
+    });
 });
 
 
@@ -27,4 +34,9 @@ app.controller('HomeController', function($scope){
 
 app.controller('DogsController', function($scope){
   console.log('Dogs Controllers');
+});
+
+
+app.controller('NumbersController', function($scope, $routeParams, $location){
+  debugger;
 });
